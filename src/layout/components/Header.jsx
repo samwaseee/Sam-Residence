@@ -1,46 +1,58 @@
 import React from 'react';
 import { FaSearch } from 'react-icons/fa';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 const Header = () => {
     return (
         <div>
-            <div className="carousel w-full my-10 bg-[#f2ebe5] h-[600px] rounded-2xl">
-                <div id="slide1" className="carousel-item relative w-full">
-                    <div className='my-auto ml-24'>
-                        <h3 className='text-4xl font-bold'>Find your next Home in Your Dream City</h3>
-                        <p className='font-robo text-lg mt-4'>Through our proprietary platform, WpResidence is changing how agents and clients navigate the process of finding or selling a home.</p>
+            <Swiper
+                spaceBetween={30}
+                centeredSlides={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                    clickable: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper"
+            >
+                <SwiperSlide className='w-full my-10 bg-[#f2ebe5] h-[600px] rounded-2xl'>
+                    <div className='flex'>
+                        <div className='my-auto ml-24 '>
+                            <h3 className='text-4xl font-bold'>Find your next Home in Your Dream City</h3>
+                            <p className='font-robo text-lg mt-4'>Through our proprietary platform, WpResidence is changing how agents and clients navigate the process of finding or selling a home.</p>
+                        </div>
+                        <img src="https://i.ibb.co/yf7Qfmw/house-png-2-e1646989822282.png" className="" />
                     </div>
-                    <img src="https://i.ibb.co/yf7Qfmw/house-png-2-e1646989822282.png" className="" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide3" className="btn btn-circle">❮</a>
-                        <a href="#slide2" className="btn btn-circle">❯</a>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className='flex'>
+                        <div className='my-auto ml-24 '>
+                            <h3 className='text-4xl font-bold'>Find your next Home in Your Dream City</h3>
+                            <p className='font-robo text-lg mt-4'>Through our proprietary platform, WpResidence is changing how agents and clients navigate the process of finding or selling a home.</p>
+                        </div>
+                        <img src="https://i.ibb.co/Sw6gGKL/modern-residential-district-with-green-roof-balcony-generated-by-ai-1.png" className="w-1/2" />
                     </div>
-                </div>
-                <div id="slide2" className="carousel-item relative w-full">
-                    <div className='my-auto ml-24'>
-                        <h3 className='text-4xl font-bold'>Find your next Home in Your Dream City</h3>
-                        <p className='font-robo text-lg mt-4'>Through our proprietary platform, WpResidence is changing how agents and clients navigate the process of finding or selling a home.</p>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className='flex'>
+                        <div className='my-auto ml-24 '>
+                            <h3 className='text-4xl font-bold'>Find your next Home in Your Dream City</h3>
+                            <p className='font-robo text-lg mt-4'>Through our proprietary platform, WpResidence is changing how agents and clients navigate the process of finding or selling a home.</p>
+                        </div>
+                        <img src="https://i.ibb.co/rm8xVc0/3d-rendering-house-model.png" className="w-1/2" />
                     </div>
-                    <img src="https://i.ibb.co/Sw6gGKL/modern-residential-district-with-green-roof-balcony-generated-by-ai-1.png" className="" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide1" className="btn btn-circle">❮</a>
-                        <a href="#slide3" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide3" className="carousel-item relative w-full">
-                    <div className='my-auto ml-24'>
-                        <h3 className='text-4xl font-bold'>Find your next Home in Your Dream City</h3>
-                        <p className='font-robo text-lg mt-4'>Through our proprietary platform, WpResidence is changing how agents and clients navigate the process of finding or selling a home.</p>
-                    </div>
-                    <img src="https://i.ibb.co/rm8xVc0/3d-rendering-house-model.png" className="" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide2" className="btn btn-circle">❮</a>
-                        <a href="#slide1" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-            </div>
+                </SwiperSlide>
+            </Swiper>
 
-            <div className="card card-compact z-10 bg-base-100 shadow-xl -mt-20 w-[75vw] mx-auto">
+            <div className="card card-compact z-10 bg-base-100 shadow-xl -mt-20 w-[75vw] mx-auto" data-aos="fade-up">
                 <div className="card-body">
                     <div className='flex justify-between w-[70vw] mx-auto '>
                         <div>
