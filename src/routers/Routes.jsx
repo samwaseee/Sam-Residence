@@ -4,6 +4,7 @@ import {
 import Root from "../layout/Root";
 import Home from "../layout/components/Home";
 import Properties from "../layout/components/Properties";
+import EstateDetails from "../layout/components/EstateDetails";
 
 const router = createBrowserRouter([
     {
@@ -15,8 +16,13 @@ const router = createBrowserRouter([
             element: <Home></Home>
         },
         {
-            path: '/properties',
+            path: '/',
             element: <Properties></Properties>
+        },
+        {
+          path: '/property/:id',
+          loader: ()=> fetch('Properties.json'),
+          element: <EstateDetails></EstateDetails>
         }
     ]
     },

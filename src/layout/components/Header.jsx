@@ -8,7 +8,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 const Header = () => {
     return (
-        <div>
+        <div  className='max-w-[92.5vw] mx-auto'>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -26,7 +26,7 @@ const Header = () => {
                 <SwiperSlide className='w-full my-10 bg-[#f2ebe5] h-[600px] rounded-2xl'>
                     <div className='flex'>
                         <div className='my-auto ml-24 '>
-                            <h3 className='text-4xl font-bold'>Find your next Home in Your Dream City</h3>
+                            <h3 className='text-4xl font-bold font-merri'>Find your next Home in Your Dream City</h3>
                             <p className='font-robo text-lg mt-4'>Through our proprietary platform, WpResidence is changing how agents and clients navigate the process of finding or selling a home.</p>
                         </div>
                         <img src="https://i.ibb.co/yf7Qfmw/house-png-2-e1646989822282.png" className="" />
@@ -35,7 +35,7 @@ const Header = () => {
                 <SwiperSlide>
                     <div className='flex'>
                         <div className='my-auto ml-24 '>
-                            <h3 className='text-4xl font-bold'>Find your next Home in Your Dream City</h3>
+                            <h3 className='text-4xl font-bold font-merri'>Find your next Home in Your Dream City</h3>
                             <p className='font-robo text-lg mt-4'>Through our proprietary platform, WpResidence is changing how agents and clients navigate the process of finding or selling a home.</p>
                         </div>
                         <img src="https://i.ibb.co/Sw6gGKL/modern-residential-district-with-green-roof-balcony-generated-by-ai-1.png" className="w-1/2" />
@@ -44,7 +44,7 @@ const Header = () => {
                 <SwiperSlide>
                     <div className='flex'>
                         <div className='my-auto ml-24 '>
-                            <h3 className='text-4xl font-bold'>Find your next Home in Your Dream City</h3>
+                            <h3 className='text-4xl font-bold font-merri'>Find your next Home in Your Dream City</h3>
                             <p className='font-robo text-lg mt-4'>Through our proprietary platform, WpResidence is changing how agents and clients navigate the process of finding or selling a home.</p>
                         </div>
                         <img src="https://i.ibb.co/rm8xVc0/3d-rendering-house-model.png" className="w-1/2" />
@@ -61,16 +61,16 @@ const Header = () => {
                         </div>
                         <div>
                             <p>TYPE</p>
-                            <select className="select select-bordered w-full max-w-xs min-h-0 h-8">
-                                <option disabled selected>Who shot first?</option>
+                            <select className="select select-bordered w-full max-w-xs min-h-0 h-8"  defaultValue="Property type">
+                                <option>Property Type</option>
                                 <option>Han Solo</option>
                                 <option>Greedo</option>
                             </select>
                         </div>
                         <div>
                             <p>CATEGORY</p>
-                            <select className="select select-bordered w-full max-w-xs min-h-0 h-8">
-                                <option disabled selected>Who shot first?</option>
+                            <select className="select select-bordered w-full max-w-xs min-h-0 h-8" defaultValue="Peoperty categpry">
+                                <option>Property Category</option>
                                 <option>Han Solo</option>
                                 <option>Greedo</option>
                             </select>

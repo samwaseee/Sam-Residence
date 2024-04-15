@@ -44,7 +44,7 @@ const Navbar = () => {
 
 
     return (
-        <nav>
+        <nav  className='max-w-[92.5vw] mx-auto'>
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
