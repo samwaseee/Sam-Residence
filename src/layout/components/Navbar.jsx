@@ -1,7 +1,17 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
+
+    const { user,logOut } = useContext(AuthContext);
+
+    const handleSignout = () =>{
+        logOut()
+        .then ()
+        .catch()
+    }
 
     const links = <>
         <li><NavLink to="/" className="rounded-sm" style={({ isActive, isTransitioning }) => {
@@ -44,7 +54,7 @@ const Navbar = () => {
 
 
     return (
-        <nav  className='max-w-[92.5vw] mx-auto'>
+        <nav className='max-w-[92.5vw] mx-auto'>
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -55,7 +65,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <HiOutlineBuildingOffice2 size={54}/>
+                    <HiOutlineBuildingOffice2 size={54} />
                     <a className="sans font-bold text-xl ml-3"><span className="text-[#452820]">SAM's</span> <br />RESIDENCE</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -63,8 +73,14 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
+
                 <div className="navbar-end grid md:flex">
-                    <a className="btn btn-outline text-white bg-[#452820]">Log In</a>
+                    {
+                        user ?
+                            <button onClick={handleSignout} className="btn btn-outline text-white bg-[#452820]">Sign Out</button>
+                            :
+                            <Link to={'/login'}><button className="btn btn-outline text-white bg-[#452820]">Log In</button></Link>
+                    }
                 </div>
             </div>
         </nav>

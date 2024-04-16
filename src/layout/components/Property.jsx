@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const Property = (property) => {
 
-    console.log(property)
+    // console.log(property)
 
     const { estate_id, image, area, bathrooms, bed_rooms, description, estate_title, owner, facilities, furnished, location, owner_name, price, segment_name, status } = property.property;
 
@@ -30,6 +30,7 @@ const Property = (property) => {
                     <h2 className="card-title font-merri">
                         {estate_title}
                     </h2>
+                    <p className='font-medium text-xl'>{price/10}$</p>
                     <p className='text-xs'>{description.substring(0, description.indexOf('.') + 1)}</p>
                     <div>Facilites : {facilities.map(facility => <span className='text-xs'>{facility} </span>)}</div>
 

@@ -4,6 +4,7 @@ import { IoBedOutline } from "react-icons/io5";
 import { LuBath, LuPhone } from "react-icons/lu";
 import { useLoaderData, useParams } from "react-router-dom";
 
+
 const EstateDetails = () => {
     const properties = useLoaderData();
     const propId = useParams();
@@ -14,7 +15,7 @@ const EstateDetails = () => {
 
     const { estate_id, image, area, bathrooms, bed_rooms, description, estate_title, owner, facilities, furnished, location, owner_name, price, segment_name, status } = property;
 
-    console.log(estate_id, property);
+    console.log(propId, property);
 
     return (
         <div>
@@ -27,7 +28,8 @@ const EstateDetails = () => {
                     }
                     <div className='badge flex gap-2 p-4 text-xl'> <FaLocationDot></FaLocationDot> {location}</div>
                 </div>
-                <h2 className="card-title font-merri">
+                <p className="text-3xl font-semibold mb-7">{price} $</p>
+                <h2 className="card-title font-merri text-4xl">
                     {estate_title}
                 </h2>
                 <p className="font-bold text-xl">Overview</p>

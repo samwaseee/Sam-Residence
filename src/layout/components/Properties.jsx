@@ -13,7 +13,7 @@ const Properties = () => {
     }, [])
 
 
-    console.log(properties);
+    // console.log(properties);
 
     return (
         <div className='max-w-[75.5vw] mx-auto'>
