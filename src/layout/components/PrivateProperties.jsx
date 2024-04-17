@@ -19,7 +19,7 @@ const PrivateProperties = () => {
             <Helmet>
                 <title>SAM's RECIDENCE | Properties</title>
             </Helmet>
-            <h3 className='text-5xl mt-10 ml-10 mb-10'>Here is a list of best <br />
+            <h3 className='text-3xl md:text-5xl mt-10 ml-10 mb-10'>Here is a list of best <br />
                 properties available for you</h3>
 
             <div className='flex flex-wrap ml-10'>

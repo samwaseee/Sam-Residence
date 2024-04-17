@@ -24,7 +24,7 @@ const EstateDetails = () => {
                 <title>SAM's RECIDENCE | {estate_title}</title>
             </Helmet>
             <img src={image} className="h-[50vh] mx-auto" />
-            <div className="max-w-[50vw] mx-auto">
+            <div className="w-[85vw] lg:max-w-[50vw] mx-auto">
                 <div className="flex gap-4 items-center my-10">
                     <div className="badge text-white bg-[#ab978ad9] text-xl p-4">{status}</div>
                     {furnished &&
@@ -37,7 +37,7 @@ const EstateDetails = () => {
                     {estate_title}
                 </h2>
                 <p className="font-bold text-xl">Overview</p>
-                <div className="flex justify-between">
+                <div className="flex flex-wrap justify-between">
                     <div>Facilites : {facilities.map(facility => <p>{facility} </p>)}</div>
                     <div className="flex items-center gap-7 my-5">
                         <div>

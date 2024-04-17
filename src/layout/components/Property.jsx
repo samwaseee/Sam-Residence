@@ -16,7 +16,7 @@ const Property = (property) => {
     return (
 
         <div>
-            <div className="card w-80 h-[36rem] font-robo bg-base-100 shadow-xl" data-aos="zoom-in">
+            <div className="card lg:w-80 h-[36rem] font-robo bg-base-100 shadow-xl" data-aos="zoom-in">
                 <figure className='h-64 -mb-14'><img src={image} alt="Property" className=' hover:scale-125 duration-700' /></figure>
                 <div className="card-body">
                     <div className="flex justify-between">

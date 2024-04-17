@@ -17,11 +17,11 @@ const Stat = () => {
 
     return (
         <div className=' bg-[#f4ebe4] max-w-7xl rounded-3xl mx-auto'>
-            <div className='flex text-4xl font-merri p-20 items-center'>
-                <h2 className='w-1/2'>Explore most <br />
+            <div className='flex flex-wrap lg:flex-nowrap text-4xl font-merri p-20 items-center'>
+                <h2 className='w-1/2 mx-auto p-5 lg:p-0'>Explore most <br />
                     popular areas</h2>
 
-                <div className='flex gap-5 ml-10'>
+                <div className='flex flex-wrap lg:flex-nowrap gap-5 ml-10'>
                     {
                         properties.slice(0, 3).map(property => <StatProperty
                             key={property.estate_id}
@@ -30,7 +30,7 @@ const Stat = () => {
                     }
                 </div>
             </div>
-            <div className="stats shadow w-[70vw] mx-20">
+            <div className="stats shadow flex flex-wrap md:flex-nowrap w-96 md:w-[78vw] ml-3 md:ml-[84px]">
                 <div className="stat">
                     <div className="stat-figure text-secondary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>

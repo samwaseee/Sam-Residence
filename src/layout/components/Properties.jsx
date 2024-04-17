@@ -20,7 +20,7 @@ const Properties = () => {
             <h3 className='text-5xl mt-48 ml-10 mb-10'>Explore the latest <br />
                 properties available</h3>
 
-            <div className='flex flex-wrap gap-10 ml-10'>
+            <div className='flex flex-wrap gap-14 mx-auto'>
                 {
                     properties.slice(0,dataLength).map(property => <Property 
                         key={property.estate_id}

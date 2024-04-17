@@ -55,7 +55,7 @@ const UpdateProf = () => {
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold my-6">Update your profile</h1>
                 </div>
-                <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto">
                     <form className="card-body" onSubmit={handleUpdate}>
                         <img src={user.photoURL} alt="No image" className='text-center rounded-3xl' />
                         <div className="form-control">
