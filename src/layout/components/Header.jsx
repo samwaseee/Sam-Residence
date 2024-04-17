@@ -8,7 +8,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 const Header = () => {
     return (
-        <div  className='max-w-[92.5vw] mx-auto'>
+        <div  className='lg:max-w-[92.5vw] mx-auto'>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -29,7 +29,7 @@ const Header = () => {
                             <h3 className='text-4xl font-bold font-merri'>Find your next Home in Your Dream City</h3>
                             <p className='font-robo text-lg mt-4'>Through our proprietary platform, WpResidence is changing how agents and clients navigate the process of finding or selling a home.</p>
                         </div>
-                        <img src="https://i.ibb.co/yf7Qfmw/house-png-2-e1646989822282.png" className="" />
+                        <img src="https://i.ibb.co/yf7Qfmw/house-png-2-e1646989822282.png" className="w-96 lg:w-full" />
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>

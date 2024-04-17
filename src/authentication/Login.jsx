@@ -3,6 +3,9 @@ import SocialLogin from './SocialLogin';
 import useAuth from './useAuth';
 import { useState } from 'react';
 import { VscEye, VscEyeClosed } from 'react-icons/vsc';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
 
@@ -18,7 +21,6 @@ const Login = () => {
     const [LogError,setLogError] = useState('');
     const [LogSuccess,setLogSuccess] = useState('');
     const [showPass,setShowPass] = useState(false);
-
 
 
     const handleLogin = e => {
@@ -37,12 +39,13 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 console.log(result.user);
-                setLogSuccess('User created successfully')
                 navigate(location?.state ? location.state : '/');
+                toast.success("Login successful!");
             })
             .catch(error => {
                 console.log(error);
                 setLogError(error.code.split('auth/')[1]);
+                toast.error("Check your email and password!");
             })
 
         setFormValues({
@@ -53,6 +56,9 @@ const Login = () => {
 
     return (
         <div className="hero">
+            <Helmet>
+                <title>SAM's RECIDENCE | Login</title>
+            </Helmet>
             <div className="">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold my-10">Login account</h1></div>

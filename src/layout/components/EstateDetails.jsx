@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { FaExpandArrowsAlt } from "react-icons/fa";
 import { FaInstagram, FaLocationDot } from "react-icons/fa6";
 import { IoBedOutline } from "react-icons/io5";
@@ -15,10 +16,13 @@ const EstateDetails = () => {
 
     const { estate_id, image, area, bathrooms, bed_rooms, description, estate_title, owner, facilities, furnished, location, owner_name, price, segment_name, status } = property;
 
-    console.log(propId, property);
+    // console.log(propId, property);
 
     return (
         <div>
+            <Helmet>
+                <title>SAM's RECIDENCE | {estate_title}</title>
+            </Helmet>
             <img src={image} className="h-[50vh] mx-auto" />
             <div className="max-w-[50vw] mx-auto">
                 <div className="flex gap-4 items-center my-10">

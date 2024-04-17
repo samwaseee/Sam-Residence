@@ -37,15 +37,18 @@ const Navbar = () => {
                 }}>Properties</NavLink>
             }
         </li>
-        <li><NavLink to="/updateProfile" className="rounded-sm" style={({ isActive, isTransitioning }) => {
-            return {
-                fontWeight: isActive ? "bold" : "",
-                color: isActive ? "#452820" : "",
-                backgroundColor: isActive ? "white" : "",
-                borderTop: isActive ? "solid #452820" : "solid white",
-                viewTransitionName: isTransitioning ? "slide" : "",
-            };
-        }}>Update Profile</NavLink></li>
+        <li>{
+            user &&
+            <NavLink to="/updateProfile" className="rounded-sm" style={({ isActive, isTransitioning }) => {
+                return {
+                    fontWeight: isActive ? "bold" : "",
+                    color: isActive ? "#452820" : "",
+                    backgroundColor: isActive ? "white" : "",
+                    borderTop: isActive ? "solid #452820" : "solid white",
+                    viewTransitionName: isTransitioning ? "slide" : "",
+                };
+            }}>Update Profile</NavLink>
+        }</li>
     </>
 
 
@@ -74,8 +77,8 @@ const Navbar = () => {
                     {
                         user ?
                             <div className="flex gap-3 items-center">
-                                <div  class="tooltip tooltip-bottom" data-tip={user.displayName}>
-                                <button className=""> <img src={user.photoURL} className="rounded-badge w-10"/> </button>
+                                <div class="tooltip tooltip-bottom" data-tip={user.displayName}>
+                                    <button className=""> <img src={user.photoURL} alt="No image" className="rounded-badge w-10" /> </button>
                                 </div>
                                 <button onClick={handleSignout} className="btn btn-outline text-white bg-[#ab978ad9]">Log Out</button>
                             </div>

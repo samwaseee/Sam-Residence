@@ -1,12 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "./useAuth";
 import { updateProfile } from "firebase/auth";
 import { useState } from "react";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+import { Helmet } from "react-helmet-async";
 
 const Resister = () => {
 
     const {createUser} = useAuth();
+
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const [regError,setRegError] = useState('');
     const [regSuccess,setRegSuccess] = useState('');
@@ -28,7 +34,11 @@ const Resister = () => {
             return;
         }
         else if(!/[A-Z]/.test(password)){
-            setRegError("Password should have at least one uppercase character");
+            setRegError("Password should have at least one Uppercase character");
+            return;
+        }
+        else if(!/[a-z]/.test(password)){
+            setRegError("Password should have at least one Lowercase character");
             return;
         }
 
@@ -38,13 +48,15 @@ const Resister = () => {
         createUser(email,password)
         .then(result =>{
             console.log(result.user)
-            setRegSuccess('User created successfully')
-
+            setRegSuccess('Registration Successful')
             updateProfile(result.user, {
                 displayName: name,
                 photoURL: photo
             })
-            .then(()=> console.log('name'))
+            .then(()=> {
+                navigate(location?.state ? location.state : '/');
+                toast.success("User created successfully");
+            })
             .catch()
         })
         .catch(error=>{
@@ -56,6 +68,9 @@ const Resister = () => {
 
     return (
         <div className="hero">
+            <Helmet>
+                <title>SAM's RECIDENCE | Register</title>
+            </Helmet>
             <div className="">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold my-10">Register now!</h1></div>
