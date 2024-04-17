@@ -17,7 +17,7 @@ const PrivateProperties = () => {
     return (
         <div className='max-w-[75.5vw] mx-auto'>
             <Helmet>
-                <title>SAM's RECIDENCE | Properties</title>
+                <title>SAM's RESIDENCE | Properties</title>
             </Helmet>
             <h3 className='text-3xl md:text-5xl mt-10 ml-10 mb-10'>Here is a list of best <br />
                 properties available for you</h3>

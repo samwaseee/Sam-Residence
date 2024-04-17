@@ -49,7 +49,7 @@ const UpdateProf = () => {
     return (
         <div className="hero">
             <Helmet>
-                <title>SAM's RECIDENCE | Update Profile</title>
+                <title>SAM's RESIDENCE | Update Profile</title>
             </Helmet>
             <div className="">
                 <div className="text-center lg:text-left">

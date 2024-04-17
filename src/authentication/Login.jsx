@@ -57,7 +57,7 @@ const Login = () => {
     return (
         <div className="hero">
             <Helmet>
-                <title>SAM's RECIDENCE | Login</title>
+                <title>SAM's RESIDENCE | Login</title>
             </Helmet>
             <div className="">
                 <div className="text-center lg:text-left">

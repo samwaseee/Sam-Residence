@@ -69,7 +69,7 @@ const Resister = () => {
     return (
         <div className="hero">
             <Helmet>
-                <title>SAM's RECIDENCE | Register</title>
+                <title>SAM's RESIDENCE | Register</title>
             </Helmet>
             <div className="">
                 <div className="text-center lg:text-left">

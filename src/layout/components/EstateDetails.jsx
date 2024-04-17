@@ -21,7 +21,7 @@ const EstateDetails = () => {
     return (
         <div>
             <Helmet>
-                <title>SAM's RECIDENCE | {estate_title}</title>
+                <title>SAM's RESIDENCE | {estate_title}</title>
             </Helmet>
             <img src={image} className="h-[50vh] mx-auto" />
             <div className="w-[85vw] lg:max-w-[50vw] mx-auto">

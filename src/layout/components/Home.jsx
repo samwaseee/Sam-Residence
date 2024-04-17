@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <div className='font-robo'>
             <Helmet>
-                <title>SAM's RECIDENCE | Home</title>
+                <title>SAM's RESIDENCE | Home</title>
             </Helmet>
             <Header></Header>
             <Explore></Explore>
