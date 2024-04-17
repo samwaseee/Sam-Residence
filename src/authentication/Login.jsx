@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from './SocialLogin';
 import useAuth from './useAuth';
 import { useState } from 'react';
+import { VscEye, VscEyeClosed } from 'react-icons/vsc';
 
 const Login = () => {
 
@@ -14,6 +15,9 @@ const Login = () => {
         email: "",
         password: ""
     });
+    const [LogError,setLogError] = useState('');
+    const [LogSuccess,setLogSuccess] = useState('');
+    const [showPass,setShowPass] = useState(false);
 
 
 
@@ -26,15 +30,19 @@ const Login = () => {
 
         console.log(email, password);
 
+        setLogError('');
+        setLogSuccess('');
+
 
         signIn(email, password)
             .then(result => {
                 console.log(result.user);
-
+                setLogSuccess('User created successfully')
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 console.log(error);
+                setLogError(error.code.split('auth/')[1]);
             })
 
         setFormValues({
@@ -65,19 +73,26 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password"
+                            <input type={showPass ? "text" : "password"} 
                                 value={formValues.password}
                                 onChange={(e) =>
                                     setFormValues({ ...formValues, password: e.target.value })
                                 }
                                 required name='password' placeholder="password" className="input input-bordered" />
-                            <label className="label"></label>
+                            <label className="label"><span className="relative bottom-10 left-56" onClick={() => setShowPass(!showPass)}>{
+                            showPass ? <VscEyeClosed></VscEyeClosed> : <VscEye /> } </span></label>
                         </div>
                         <div className="form-control mt-4">
                             <button className="btn btn-outline">Login</button>
                         </div>
 
                     </form>
+                    {
+                        LogError && <p className="text-red-700 ml-7 -mt-4 mb-4">*{LogError}</p>
+                    }
+                    {
+                        LogSuccess && <p className="text-green-700 text-center -mt-4 mb-4">{LogSuccess}</p>
+                    }
                     <p className='mb-2 text-xl flex justify-center items-center gap-2'> <span> <hr className='w-20' /> </span> <span> Or </span> <hr className='w-20' /> </p>
                     <SocialLogin></SocialLogin>
                     <p className='mx-auto pb-5'>Don't have an account <Link to={'/Register'} className='font-bold'>Register</Link> </p>

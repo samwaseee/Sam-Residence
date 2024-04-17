@@ -73,7 +73,12 @@ const Navbar = () => {
                 <div className="navbar-end grid md:flex">
                     {
                         user ?
-                            <button onClick={handleSignout} className="btn btn-outline text-white bg-[#ab978ad9]">Log Out</button>
+                            <div className="flex gap-3 items-center">
+                                <div  class="tooltip tooltip-bottom" data-tip={user.displayName}>
+                                <button className=""> <img src={user.photoURL} className="rounded-badge w-10"/> </button>
+                                </div>
+                                <button onClick={handleSignout} className="btn btn-outline text-white bg-[#ab978ad9]">Log Out</button>
+                            </div>
                             :
                             <Link to={'/login'}><button className="btn btn-outline text-white bg-[#452820]">Log In</button></Link>
                     }
