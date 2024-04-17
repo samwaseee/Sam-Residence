@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Tooltip } from 'react-tooltip'
 
 const Navbar = () => {
 
@@ -72,14 +73,14 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-
                 <div className="navbar-end grid md:flex">
                     {
                         user ?
                             <div className="flex gap-3 items-center">
-                                <div class="tooltip tooltip-bottom" data-tip={user.displayName}>
+                                <a data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}>
                                     <button className=""> <img src={user.photoURL} alt="No image" className="rounded-badge w-10" /> </button>
-                                </div>
+                                </a>
+                                <Tooltip id="my-tooltip" />
                                 <button onClick={handleSignout} className="btn btn-outline text-white bg-[#ab978ad9]">Log Out</button>
                             </div>
                             :
