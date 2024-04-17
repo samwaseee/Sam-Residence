@@ -5,12 +5,12 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
 
-    const { user,logOut } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
-    const handleSignout = () =>{
+    const handleSignout = () => {
         logOut()
-        .then ()
-        .catch()
+            .then()
+            .catch()
     }
 
     const links = <>
@@ -23,7 +23,21 @@ const Navbar = () => {
                 viewTransitionName: isTransitioning ? "slide" : "",
             };
         }}>Home</NavLink></li>
-        <li><NavLink to="/properties" className="rounded-sm" style={({ isActive, isTransitioning }) => {
+        <li>
+            {
+                user &&
+                <NavLink to="/properties" className="rounded-sm" style={({ isActive, isTransitioning }) => {
+                    return {
+                        fontWeight: isActive ? "bold" : "",
+                        color: isActive ? "#452820" : "",
+                        backgroundColor: isActive ? "white" : "",
+                        borderTop: isActive ? "solid #452820" : "solid white",
+                        viewTransitionName: isTransitioning ? "slide" : "",
+                    };
+                }}>Properties</NavLink>
+            }
+        </li>
+        <li><NavLink to="/updateProfile" className="rounded-sm" style={({ isActive, isTransitioning }) => {
             return {
                 fontWeight: isActive ? "bold" : "",
                 color: isActive ? "#452820" : "",
@@ -31,25 +45,7 @@ const Navbar = () => {
                 borderTop: isActive ? "solid #452820" : "solid white",
                 viewTransitionName: isTransitioning ? "slide" : "",
             };
-        }}>Properties</NavLink></li>
-        <li><NavLink to="/blog" className="rounded-sm" style={({ isActive, isTransitioning }) => {
-            return {
-                fontWeight: isActive ? "bold" : "",
-                color: isActive ? "#452820" : "",
-                backgroundColor: isActive ? "white" : "",
-                borderTop: isActive ? "solid #452820" : "solid white",
-                viewTransitionName: isTransitioning ? "slide" : "",
-            };
-        }}>Blog</NavLink></li>
-        <li><NavLink to="/Contact" className="rounded-sm" style={({ isActive, isTransitioning }) => {
-            return {
-                fontWeight: isActive ? "bold" : "",
-                color: isActive ? "#452820" : "",
-                backgroundColor: isActive ? "white" : "",
-                borderTop: isActive ? "solid #452820" : "solid white",
-                viewTransitionName: isTransitioning ? "slide" : "",
-            };
-        }}>Contact</NavLink></li>
+        }}>Update Profile</NavLink></li>
     </>
 
 
@@ -77,7 +73,7 @@ const Navbar = () => {
                 <div className="navbar-end grid md:flex">
                     {
                         user ?
-                            <button onClick={handleSignout} className="btn btn-outline text-white bg-[#452820]">Sign Out</button>
+                            <button onClick={handleSignout} className="btn btn-outline text-white bg-[#ab978ad9]">Log Out</button>
                             :
                             <Link to={'/login'}><button className="btn btn-outline text-white bg-[#452820]">Log In</button></Link>
                     }

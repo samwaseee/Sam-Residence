@@ -1,10 +1,9 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../Provider/AuthProvider";
+import useAuth from "./useAuth";
 
 const Resister = () => {
 
-    const {createUser} = useContext(AuthContext)
+    const {createUser} = useAuth();
 
     const handleReg = e =>{
         e.preventDefault();
@@ -13,6 +12,7 @@ const Resister = () => {
         const name = form.get('name');
         const email = form.get('email');
         const password = form.get('password');
+        const photo = form.get('photo');
 
         console.log(name,email,password);
 
@@ -44,6 +44,12 @@ const Resister = () => {
                                 <span className="label-text"></span>
                             </label>
                             <input type="email" required name='email' placeholder="Your email" className="input input-bordered" />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text"></span>
+                            </label>
+                            <input type="link" required name='photo' placeholder="Photo URL" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">

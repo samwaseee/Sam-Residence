@@ -8,11 +8,15 @@ import EstateDetails from "../layout/components/EstateDetails";
 import Login from "../authentication/Login";
 import Register from "../authentication/Resister";
 import PrivateRoute from "./PrivateRoute";
+import Error from "../layout/components/Error";
+import PrivateProperties from "../layout/components/PrivateProperties";
+import UpdateProf from "../layout/components/UpdateProf";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement: <Error/>,
       children: [
         {
             path: '/',
@@ -34,6 +38,14 @@ const router = createBrowserRouter([
         {
           path: '/register',
           element: <Register></Register>
+        },
+        {
+          path: '/properties',
+          element: <PrivateRoute><PrivateProperties></PrivateProperties></PrivateRoute>
+        },
+        {
+          path: '/updateProfile',
+          element: <PrivateRoute> <UpdateProf></UpdateProf> </PrivateRoute>
         }
     ]
     },
