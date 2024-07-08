@@ -1,6 +1,6 @@
 # SAM's RESIDENCE
 
->Live Site : [https://assignment-9-3c4cb.web.app/]
+>### **[Live Site](https://assignment-9-3c4cb.web.app)**
 
 Welcome to the GitHub repository of SAM's RESIDENCE, a residential real estate themed website.
 
